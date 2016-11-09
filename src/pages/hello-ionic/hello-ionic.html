@@ -9,23 +9,21 @@
 
 
 <ion-content padding>
-
-  <h3>Welcome to your first Ionic app!</h3>
-
-  <p>
-    This starter project is our way of helping you get a functional app running in record time.
-  </p>
-  <p>
-    Follow along on the tutorial section of the Ionic docs!
-  </p>
   <p>
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
   </p>
-  <ul>
-    <li class="text" *ngFor="let item of items | async" (click)='onSelect(item)'>
-      {{item.firstName}} {{item.lastName}}
-      <pre>{{item | json}}</pre>
-    </li>
-  </ul>
+  <div *ngFor="let item of items | async" (click)='onSelect(item)'>
+    <ion-card>
+      <ion-card-content>
+
+        <ion-card-title>
+          {{item.firstName}} {{item.lastName}}
+        </ion-card-title>
+        <p>
+          {{item | json}}
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </div>
 
 </ion-content>
