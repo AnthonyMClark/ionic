@@ -1,0 +1,20 @@
+<ion-menu [content]="content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Pages</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+<!--Pay attention to the [root] property binding. This sets what is essentially the first, or “root” 
+page for the ion-nav component. When ion-nav loads, the component referenced by the variable rootPage will be the root page.-->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
