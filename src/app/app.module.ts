@@ -3,7 +3,7 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
-
+import { NewPersonPage } from '../pages/hello-ionic/new-person-modal';
 import { AngularFireModule } from 'angularfire2';
 //export the config & init firebase
 export const firebaseConfig = {
@@ -18,7 +18,8 @@ export const firebaseConfig = {
   declarations: [
     MyApp,
     HelloIonicPage,
-    ItemDetailsPage
+    ItemDetailsPage,
+    NewPersonPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -28,7 +29,8 @@ export const firebaseConfig = {
   entryComponents: [
     MyApp,
     HelloIonicPage,
-    ItemDetailsPage
+    ItemDetailsPage,
+    NewPersonPage
   ],
   providers: []
 })

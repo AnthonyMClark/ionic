@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            New Person
+        </ion-title>
+        <ion-buttons right>
+            <button ion-button (click)="dismiss()" color="dark"> 
+                <ion-icon name="close" item-right></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div *ngIf="!isAdded">
+        <ion-item>
+            <ion-label fixed>First Name</ion-label>
+            <ion-input #firstName type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label fixed>Last Name</ion-label>
+            <ion-input #lastName type="text"></ion-input>
+        </ion-item>
+        <button ion-button color="secondary" (click)="addNewPlayer(firstName.value, lastName.value)">Add</button>
+    </div>
+    <div *ngIf="isAdded">
+        <ion-list no-border>
+            <ion-list-header>
+                {{firstName}} {{lastName}}
+            </ion-list-header>
+            <ion-item>
+                <ion-icon name='calendar' item-left></ion-icon>Birthday
+                <ion-note item-right>11/10/2016</ion-note>
+            </ion-item>
+            <ion-item>
+                <ion-toggle checked="false"></ion-toggle>
+                <ion-label>Notify Me</ion-label>
+                <ion-icon name='notifications' item-left></ion-icon>
+            </ion-item>
+            <ion-item>
+                <ion-icon name='wine' item-left></ion-icon>Event Location
+                <ion-note item-right>The Rind</ion-note>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>
