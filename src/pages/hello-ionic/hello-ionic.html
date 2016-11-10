@@ -8,20 +8,23 @@
 </ion-header>
 
 
-<ion-content padding>
-  <p>
+<ion-content padding class="hello-ionic-page">
+  <!--<p>
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
-  </p>
+  </p>-->
   <div *ngFor="let item of items | async" (click)='onSelect($event, item)'>
     <ion-card>
+      <img src="assets/images/archer.jpg"/>
       <ion-card-content>
-
-        <ion-card-title>
-          {{item.firstName}} {{item.lastName}}
-        </ion-card-title>
-        <p>
+        <ion-list>
+          <ion-list-header>{{item.firstName}} {{item.lastName}}</ion-list-header>
+          <ion-item>11/10/2016</ion-item>
+          <ion-item>The Rind</ion-item>
+          <ion-item>Some notes about gifts</ion-item>
+        </ion-list>
+        <!--<p>
           {{item | json}}
-        </p>
+        </p>-->
       </ion-card-content>
     </ion-card>
   </div>

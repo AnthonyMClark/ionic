@@ -4,8 +4,9 @@ import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { ItemDetailsPage } from '../item-details/item-details';
 import { NewPersonPage } from './new-person-modal';
 @Component({
-  templateUrl: 'hello-ionic.html' //templates are now based on relative paths
+  templateUrl: 'hello-ionic.html', //templates are now based on relative paths
   //no selectors because pages are loaded dynamically
+  styleUrls: ['/pages/hello-ionic/hello-ionic.scss']
 })
 export class HelloIonicPage {
   items: FirebaseListObservable<any[]>;
