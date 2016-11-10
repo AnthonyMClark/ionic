@@ -12,7 +12,7 @@
   <p>
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
   </p>
-  <div *ngFor="let item of items | async" (click)='onSelect(item)'>
+  <div *ngFor="let item of items | async" (click)='onSelect($event, item)'>
     <ion-card>
       <ion-card-content>
 

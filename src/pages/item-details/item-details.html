@@ -8,11 +8,13 @@
 </ion-header>
 
 <ion-content>
- <div *ngIf="selectedItem" class="selection">
-    <b>{{selectedItem.title}}</b>
-    <ion-icon name="{{selectedItem.icon}}"></ion-icon>
-    <div>
-      You navigated here from <b>{{selectedItem.title}}</b>
-    </div>
+  <div *ngIf="selectedItem" class="selection">
+    <div>{{selectedItem.$key}}</div>
+    <div>{{selectedItem.firstName}}</div>
+    <div>{{selectedItem.lastName}}</div>
   </div>
+  <ion-input type="text" #firstName placeholder="firstname"></ion-input>
+  <ion-input type="text" #lastName placeholder="lastname"></ion-input>
+
+  <button ion-button color="dark" (click)="update(firstName.value, lastName.value)">Edit Person</button>
 </ion-content>
